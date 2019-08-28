@@ -1,0 +1,8 @@
+<div class="members">
+  <div class="member" $if="members" $for="(key, member) of members">
+    <h1>${member.name}</h1>
+    <h3 $if="member.location != 'Unknown'">Current location is ${member.location}</h3>
+    <h3 $if="member.location == 'Unknown'">Current location is unknown</h3>
+  </div>
+  <p $if="!members">Cannot find any members in the dataset</p>
+</div>

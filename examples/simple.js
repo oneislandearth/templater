@@ -1,8 +1,8 @@
 // Import the template package
 import { Template } from '../lib';
 
-// Convert the code to a template
-const template = Template.fromString(`<h1 $if="data.message">\${data.message}</h1><p $if="!data.message">No message...</p>`);
+// Create a new template from a string
+const template = Template.fromString(`<h1 $if="message">\${message}</h1><p $if="!message">No message...</p>`);
 
 // Render the template (Case A)
 let html = template.render({ message: 'hello earth' });

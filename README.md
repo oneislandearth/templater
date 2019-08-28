@@ -1,17 +1,21 @@
-## Templater
+# Templater
 
 A Javascript markup language engine for workers
 
-# Usage
+## Usage
 
-Run the example rendering from a file
+Coming soon - see examples
+
+## Examples
+
+Run a simple example rendering from a string
 
 ```bash
-npm run example-file
+npm run example-simple
 ```
 
-Run the example rendering from a string
+Run a complex example rendering from a template
 
 ```bash
-npm run example-string
+npm run example-complex
 ```

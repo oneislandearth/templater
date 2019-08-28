@@ -8,8 +8,8 @@
     "webpack-cli": "^3.3.7"
   },
   "scripts": {
-    "example-file": "webpack --target=\"webworker\" --entry=\"./examples/file-example.js\" && node dist/main.js",
-    "example-string": "webpack --target=\"webworker\" --entry=\"./examples/string-example.js\" && node dist/main.js"
+    "example-simple": "webpack --silent --target=\"webworker\" --entry=\"./examples/simple.js\" && node dist/main.js",
+    "example-complex": "webpack --target=\"webworker\" --entry=\"./examples/complex.js\" && node dist/main.js"
   },
   "author": "Daniel Larkin <daniel@larkin.nz>",
   "license": "MIT"
