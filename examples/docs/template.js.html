@@ -1,0 +1,267 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+      body {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: #f4f4f4;
+        font-family: 'Lato', sans-serif;
+      }
+      section.documentation {
+        display: block;
+        width: 90%;
+        max-width: 720px;
+        /* margin: auto; */
+        padding: 50px;
+      }
+      h1 {
+        font-weight: 700;
+        color: #1dab80;
+        font-size: 1.8em;
+        line-height: 1.6em;
+      }
+      h3, strong {
+        font-weight: 700;
+        color: #434343;
+      }
+      h3 {
+        font-size: 1.2em;
+        line-height: 1em;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.method::before {
+        content: '#';
+        color: #1dab80;
+        position: relative;
+        top: 0.05em;
+        padding-right: 0.2em;
+        font-size: 1.2em;
+        line-height: 1.2em;
+        font-weight: 600;
+      }
+      .method span.brace-open {
+        margin-left: 0.2em;
+      }
+      .method span.brace-close {
+        margin-right: 0.2em;
+      }
+      .static, .argument {
+        color: #008470;
+        font-family: 'Roboto Mono';
+        font-size: 0.8em;
+      }
+      .static {
+        margin-right: 0.5em;
+      }
+      .argument span {
+        margin: 0 0.2em;
+      }
+      ul, p {
+        line-height: 1.6em;
+        margin: 1.2em 0 -1.2em;
+        padding-bottom: 1.2em;
+      }
+      p {
+          word-spacing: 0.05em;
+      }
+      ul {
+        padding-bottom: 0;
+        margin: 1.2em 0;
+        padding-left: 1.25em;
+        line-height: 1.4em;
+      }
+      code {
+        color: #008470;
+        padding: 3px 5px;
+        margin: 0 2px;
+        border-radius: 2px;
+        white-space: nowrap;
+        font-family: 'Roboto Mono', Monaco, courier, monospace;
+        font-size: 0.85em;
+        -webkit-font-smoothing: initial;
+        -moz-osx-font-smoothing: initial;
+      }
+      .sidebar {
+        position: absolute;
+        z-index: 10;
+        top: 61px;
+        left: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+      }
+    </style>
+    <style>
+      pre {
+        border-radius: 2px;
+        position: relative;
+      }
+      pre code {
+        overflow-x: auto;
+        color: #525252;
+        white-space: pre;
+        padding: 1.2em 1.4em;
+        font-size: 0.85em;
+        line-height: 1.6rem;
+        display: block;
+        text-align: left
+      }
+      pre code .hljs-tag,
+      pre code .hljs-tag pre code .hljs-title,
+      pre code .hljs-change,
+      pre code .hljs-winutils,
+      pre code .hljs-flow,
+      pre code .hljs-tex pre code .hljs-special {
+        color: #2973b7;
+      }
+      pre code .hljs-symbol,
+      pre code .hljs-symbol pre code .hljs-string,
+      pre code .hljs-value,
+      pre code .hljs-regexp,
+      pre code .hljs-string,
+      pre code .hljs-subst,
+      pre code .hljs-haskell pre code .hljs-type,
+      pre code .hljs-preprocessor,
+      pre code .hljs-ruby pre code .hljs-class pre code .hljs-parent,
+      pre code .hljs-built_in,
+      pre code .hljs-sql pre code .hljs-aggregate,
+      pre code .hljs-django pre code .hljs-template_tag,
+      pre code .hljs-django pre code .hljs-variable,
+      pre code .hljs-smalltalk pre code .hljs-class,
+      pre code .hljs-javadoc,
+      pre code .hljs-django pre code .hljs-filter pre code .hljs-argument,
+      pre code .hljs-smalltalk pre code .hljs-localvars,
+      pre code .hljs-smalltalk pre code .hljs-array,
+      pre code .hljs-attr_selector,
+      pre code .hljs-pseudo,
+      pre code .hljs-addition,
+      pre code .hljs-stream,
+      pre code .hljs-envvar,
+      pre code .hljs-apache pre code .hljs-tag,
+      pre code .hljs-apache pre code .hljs-cbracket,
+      pre code .hljs-tex pre code .hljs-command,
+      pre code .hljs-prompt {
+        color: #42b983;
+      }
+      pre code .hljs-function pre code .hljs-keyword,
+      pre code .hljs-constant {
+        color: #0092db;
+      }
+      pre code .hljs-keyword,
+      pre code .hljs-attribute {
+        color: #d63200;
+      }
+      pre code .hljs-number,
+      pre code .hljs-literal {
+        color: #a32eff;
+      }
+      pre code .hljs-class pre code .hljs-title {
+        color: #fff;
+      }
+      pre code .hljs-title {
+        color: #1dab80;
+      }
+      pre code .hljs-tag pre code .hljs-value,
+      pre code .hljs-comment,
+      pre code .hljs-java pre code .hljs-annotation,
+      pre code .hljs-python pre code .hljs-decorator,
+      pre code .hljs-template_comment,
+      pre code .hljs-pi,
+      pre code .hljs-doctype,
+      pre code .hljs-deletion,
+      pre code .hljs-shebang,
+      pre code .hljs-apache pre code .hljs-sqbracket,
+      pre code .hljs-tex pre code .hljs-formula {
+        color: #707070;
+      }
+      pre code .hljs-coffeescript pre code .hljs-javascript,
+      pre code .hljs-javascript pre code .hljs-xml,
+      pre code .hljs-tex pre code .hljs-formula,
+      pre code .hljs-xml pre code .hljs-javascript,
+      pre code .hljs-xml pre code .hljs-vbscript,
+      pre code .hljs-xml pre code .hljs-css,
+      pre code .hljs-xml pre code .hljs-cdata {
+        opacity: 0.5;
+      }
+      pre code.hljs.html::before,
+      pre code.hljs.js::before,
+      pre code.hljs.bash::before,
+      pre code.hljs.css::before {
+        font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #ccc;
+        text-align: right;
+        font-size: 0.9em;
+        padding: 5px 10px 0;
+        line-height: 15px;
+        height: 15px;
+        font-weight: 600;
+      }
+      pre code.hljs.html::before {
+        content: "HTML";
+      }
+      pre code.hljs.js::before {
+        content: "JS";
+      }
+      pre code.hljs.bash::before {
+        content: "Shell";
+      }
+      pre code.hljs.css::before {
+        content: "CSS";
+      }
+  </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <section class="documentation">
+      <section class="class" $for="type of types">
+        <h1>${type.name}</h1>
+        <section class="function" $for="(key, method) of type.methods">
+          <h3 id="${method.slug}">
+            <a class="method" href="#${method.slug}" class="headerlink" title="${method.name}">
+              <span class="static" $if="method.static">static</span>
+              <span>${method.name}</span>
+              <span class="brace-open">(</span> 
+              <a class="argument" $for="(index, argument) in method.arguments" href="#${argument.slug}">
+                <span $if="index != (method.arguments.length - 1)">${argument.name},</span>
+                <span $if="index == (method.arguments.length - 1)">${argument.name}</span>
+              </a> 
+              <span class="brace-close">)</span>
+            </a>
+          </h3>
+          <p>${method.description}</p>
+          <ul>
+            <li $if="method.arguments && method.arguments.length > 0">
+              <p><strong>Arguments:</strong></p>
+            </li>
+            <ul $if="method.arguments && method.arguments.length > 0">
+                <li $for="(key, argument) of method.arguments" id="${argument.slug}">
+                  <code>{${argument.type}}&nbsp;${argument.name}</code>
+                  <span $if="argument.optional">(optional)</span>
+                </<li>
+            </ul>
+            <li $if="method.result && method.result.length > 0">
+              <p><strong>Return:</strong></p>
+            </li>
+            <ul $if="method.result && method.result.length > 0">
+                <li $for="(key, result) of method.result">
+                  <code>{${result.type}}</code>
+                </<li>
+            </ul>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </body>
