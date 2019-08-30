@@ -1,4 +1,10 @@
-# Templater
+<p align="center">
+  <a href="https://github.com/oneislandearth/templater" target="_blank">
+    <img src=https://i.imgur.com/jk0Sc85.png">
+  </a>
+</p>
+
+***
 
 A Javascript markup language engine for workers
 
