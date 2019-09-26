@@ -10,6 +10,8 @@ A Javascript markup language engine for workers
 
 ## Usage
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/oneislandearth/templater.svg)](https://greenkeeper.io/)
+
 Coming soon - see examples
 
 ## Examples
